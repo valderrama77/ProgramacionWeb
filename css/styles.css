@@ -20,13 +20,15 @@
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html, body {
+    width: 100%;
+    overflow-x: hidden; 
+    position: relative;
 }
 
 body {
@@ -148,8 +150,8 @@ article, .resultado-item, .card-evento, .equipo-grupo, .tabla-productos, .resume
     width: 100%;
 }
 .equipo-grupo{
- margin-bottom: 60px !important; /* Espacio hacia abajo para el siguiente grupo */
-    padding: 45px !important;       /* Más aire interno para que no se vea apretado */
+ margin-bottom: 60px !important; 
+    padding: 45px !important;    
 }
 
 
@@ -208,10 +210,10 @@ article:hover, .card-evento:hover, .resultado-item:hover {
 
 .integrantes-grid {
     display: flex;
-    justify-content: center; /* Centra los integrantes */
-    gap: 80px;               /* Aumentamos de 30px a 80px la separación entre fotos */
-    flex-wrap: wrap;         /* Importante para que en celular no se amontonen */
-    margin-top: 40px;        /* Separa el título del grupo de las fotos */
+    justify-content: center; 
+    gap: 80px;               
+    flex-wrap: wrap;         
+    margin-top: 40px;        
 }
 
 .integrante-card img {
@@ -516,5 +518,105 @@ input:focus, textarea:focus {
     
     .logo-img {
         height: 40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 40px 20px;
+    }
+
+    .mision-vision, .eventos-container, .resultados-list {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+    }
+
+    .banner {
+        height: 280px;
+    }
+}
+
+/* CELULARES GRANDES / PHABLETS */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        width: 100%;
+    }
+
+    /* Forzamos que nada se salga del ancho de la pantalla */
+    .container, .mision-vision, .eventos-container, .resultados-list, .galeria-grid, .integrantes-grid {
+        grid-template-columns: 1fr !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100% !important;
+        padding: 20px 10px;
+    }
+
+    .banner {
+        height: 200px;
+    }
+
+    /* Navegación para que no empuje el diseño */
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        padding: 0;
+    }
+
+    nav ul li a {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+    /* Tablas responsivas */
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid var(--verde-suave);
+        border-radius: 12px;
+    }
+
+    td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        font-weight: bold;
+        color: var(--verde-primario);
+    }
+}
+
+/* CELULARES PEQUEÑOS */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .logo-img {
+        height: 35px;
+    }
+
+    /* Ajuste para que las tarjetas de integrantes no se vean gigantes */
+    .integrante-card img {
+        width: 140px;
+        height: 140px;
     }
 }
