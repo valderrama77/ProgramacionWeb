@@ -392,19 +392,17 @@ input:focus, textarea:focus {
     }
 
     .mision-vision {
-        grid-template-columns: 1fr; /* Una sola columna en tablets si es necesario */
+        grid-template-columns: 1fr; 
     }
 }
 
-/* ======================================================
-   ESTILOS PARA TABLET (Pantallas entre 769px y 1024px)
-   ====================================================== */
+
 @media (max-width: 1024px) {
     .container {
         padding: 60px 25px;
     }
 
-    /* En tablet mantenemos 2 columnas para que no se vea vacío */
+   
     .mision-vision, .eventos-container, .resultados-list {
         grid-template-columns: repeat(2, 1fr); 
         gap: 20px;
@@ -419,17 +417,15 @@ input:focus, textarea:focus {
     }
 }
 
-/* ======================================================
-   ESTILOS PARA CELULAR (Pantallas de 768px o menos)
-   ====================================================== */
+
 @media (max-width: 768px) {
-    /* Contenedor principal con menos aire a los lados */
+  
     .container {
         padding: 30px 15px;
         gap: 20px;
     }
 
-    /* Títulos grandes y llamativos */
+   
     h1 {
         font-size: 2.4rem;
         letter-spacing: -1px;
@@ -440,13 +436,13 @@ input:focus, textarea:focus {
         font-size: 1.8rem;
     }
 
-    /* Banner ajustado para no ocupar toda la pantalla */
+
     .banner {
         height: 200px;
         margin-bottom: 20px;
     }
 
-    /* TODO A UNA COLUMNA: Misión, Visión, Galería y Resultados */
+   
     .mision-vision, .eventos-container, .resultados-list, .galeria-grid, .integrantes-grid {
         grid-template-columns: 1fr;
         display: flex;
@@ -454,14 +450,13 @@ input:focus, textarea:focus {
         align-items: center;
     }
 
-    /* Tarjetas de integrantes más visuales */
+   
     .integrante-card img {
         width: 160px;
         height: 160px;
         margin-bottom: 10px;
     }
 
-    /* BOTONES: "Finger-friendly" (Ancho completo y más altos) */
     .btn-descarga, .btn-enviar {
         display: block;
         width: 100%;
@@ -470,7 +465,7 @@ input:focus, textarea:focus {
         text-align: center;
     }
 
-    /* TABLAS: Convertidas en tarjetas de datos */
+  
     table, thead, tbody, th, td, tr {
         display: block;
     }
@@ -500,7 +495,7 @@ input:focus, textarea:focus {
         font-size: 0.8rem;
     }
 
-    /* Menú de navegación móvil */
+  
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
@@ -513,7 +508,7 @@ input:focus, textarea:focus {
     }
 }
 
-/* Ajuste extra para celulares muy pequeños (iPhone SE / Mini) */
+
 @media (max-width: 400px) {
     h1 {
         font-size: 2rem;
